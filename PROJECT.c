@@ -24,7 +24,7 @@ printf("\n\n(NOTE: The average minimum heart rate of a human being is in range o
 printf("\n\nEnter your minimum heart rate:");
 scanf("%f",&minimum_heart_rate);
 bmi=((weight)/(height*height));
-vo2max=15*(maximum_heart_rate/minimum_heart_rate); 
+vo2max=15*(maximum_heart_rate/minimum_heart_rate); //vo2max
 
 
 
