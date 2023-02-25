@@ -1,8 +1,7 @@
 #include<stdio.h>
-void credentials(char name, int age, float weight, float height, float bmi, float vo2max);
 int main()
 {
-char name;
+char name,gender;
 int age,maximum_heart_rate;
 float bmi,weight,height,minimum_heart_rate,vo2max;
 
@@ -10,13 +9,15 @@ printf("\t\t\t\t\t\tFitness Calculator");
 
 ///Credentials,calculations and medical details///
 
-printf("\nEnter your name:");
+printf("\nEnter your name                                          :");
 scanf("%s",&name);
-printf("\nEnter your age:");
+printf("\nEnter your age                                           :");
 scanf("%d",&age);
-printf("\nEnter your weight (in Kg only):");
+printf("\nEnter your gender (Enter 'M' for male and 'F' for female):");
+gender=getche();
+printf("\nEnter your weight (in Kg only)                           :");
 scanf("%f",&weight);
-printf("\nEnter your height (in m only):");
+printf("\nEnter your height (in m only)                            :");
 scanf("%f",&height);
 maximum_heart_rate=(220-age);
 
@@ -42,24 +43,24 @@ if(age<=1)
     printf("BMI value cannot be concluded for an individual having age of 1 year or less");
 }
 
-if(2<=age<20)
+if(age>=2 && age<20)
 {
 
 if(bmi<5)
 {
-    
+    printf("Weight Status: Underweight");
 }
 if(bmi>=5 && bmi<=85)
 {
-    
+    printf("Weight Status: Healthy Weight");   
 }
 if(bmi>=85 && bmi<=95)
 {
-    
+    printf("Weight Status: At risk of overweight");
 }
 if(bmi>95)
 {
-
+    printf("Weight Status: Overweight");
 }
 }
 
@@ -99,12 +100,3 @@ if(bmi>=30)
 
 ///<---Conditions for different BMI values for age group 20 and greater-->///
 
-void credentials(char name, int age, float weight, float height, float bmi, float vo2max)
-{
-    printf("Name:%s\n",name);
-    printf("Age:%d\n",age);
-    printf("Weight:%f\n",weight);
-    printf("Height:%f\n",height);
-    printf("BMI:%f",bmi);
-    printf("VO2 max:%f",vo2max);
-}
