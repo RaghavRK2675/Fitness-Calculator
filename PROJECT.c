@@ -113,3 +113,47 @@ if(bmi>=30)
 
 ///<---Conditions for different BMI values for age group 20 and greater-->///
 
+
+
+void vo2max_calculations(char sex, int max_heart_rate, float min_heart_rate, float vo2max)
+{
+    if(sex=='M')
+    {
+        if(vo2max>=35 && vo2max<=40)
+        {
+            printf("\nVO2max       : %.2f",vo2max);
+            printf("\nVO2max status: Average");
+        }
+        else if(vo2max>=45 && vo2max<=50)
+        {
+            printf("\nVO2max       : %.2f",vo2max);
+            printf("\nVO2max status: Good");
+        }
+        else if(vo2max>=60)
+        {
+            printf("\nVO2max       : %.2f",vo2max);
+            printf("\nVO2max status: Excellent");
+        }
+    }
+
+
+    if(sex=='F')
+    {
+        if(vo2max>=35 && vo2max<=40)
+        {
+            printf("\nVO2max       : %.2f",vo2max);
+            printf("\nVO2max status: Average");
+        }
+        else if(vo2max>=38 && vo2max<=42)
+        {
+            printf("\nVO2max       : %.2f",vo2max);
+            printf("\nVO2max status: Good");
+        }
+        else if(vo2max>=50)
+        {
+            printf("\nVO2max       : %.2f",vo2max);
+            printf("\nVO2max status: Excellent");
+        }
+    }
+
+}
