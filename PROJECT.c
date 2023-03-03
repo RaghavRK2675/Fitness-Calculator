@@ -2,7 +2,7 @@
 void vo2max_calculations(char, int, float, float);
 int main()
 {
-char name,gender;
+char name[50],gender;
 int age,maximum_heart_rate;
 float bmi,weight,height,minimum_heart_rate,vo2max;
 
@@ -14,7 +14,7 @@ printf("\nEnter your name                                          :");
 gets(name);
 printf("\nEnter your age                                           :");
 scanf("%d",&age);
-printf("\nEnter your gender (Enter 'M' for male and 'F' for female):");
+printf("\nEnter your gender (Enter 'M' for male and 'F' for female):\n");
 gender=getche();
 printf("\nEnter your weight (in Kg only)                           :");
 scanf("%f",&weight);
@@ -41,7 +41,7 @@ vo2max=(15*((maximum_heart_rate/minimum_heart_rate)));       //vo2max formula
 
 if(age<=1)
 {
-    printf("BMI value cannot be concluded for an individual having age of 1 year or less");
+    printf("\nBMI value cannot be concluded for an individual having age of 1 year or less");
 }
 
 if(age>=2 && age<20)
@@ -56,19 +56,19 @@ if(bmi<5)
 if(bmi>=5 && bmi<=85)
 {
     printf("\nBMI        :%.2f",bmi);
-    printf("Weight Status: Healthy Weight");
+    printf("\nWeight Status: Healthy Weight");
     vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);   
 }
 if(bmi>=85 && bmi<=95)
 {
     printf("\nBMI        :%.2f",bmi);
-    printf("Weight Status: At risk of overweight");
+    printf("\nWeight Status: At risk of overweight");
     vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);
 }
 if(bmi>95)
 {
     printf("\nBMI        :%.2f",bmi);
-    printf("Weight Status: Overweight");
+    printf("\nWeight Status: Overweight");
     vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);
 }
 }
@@ -86,25 +86,25 @@ if(age>=20)
 if(bmi<18.5)
 {
     printf("\nBMI        :%.2f",bmi);
-    printf("Weight Status: Underweight");
+    printf("\nWeight Status: Underweight");
     vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);
 }
 if(bmi>=18.5 && bmi<=24.9)
 {
     printf("\nBMI        :%.2f",bmi);
-    printf("Weight Status: Healthy weight");
+    printf("\nWeight Status: Healthy weight");
     vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);
 }
 if(bmi>=25 && bmi<=29.9)
 {
     printf("\nBMI        :%.2f",bmi);
-    printf("Weight Status: Overweight");
+    printf("\nWeight Status: Overweight");
     vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);
 }
 if(bmi>=30)
 {
     printf("\nBMI        :%.2f",bmi);
-    printf("Weight Status: Obesity");
+    printf("\nWeight Status: Obesity");
     vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);
 }
 }
