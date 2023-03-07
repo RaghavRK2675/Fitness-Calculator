@@ -11,7 +11,7 @@ float bmi,weight,height,minimum_heart_rate,vo2max;
 
 printf("  =================================================================== %c Fitness Calculator %c ===============================================================\n",j,j);
 printf("  \n============================================================================================================================================================");
-printf("\t\t\t\t\t\t\t\t* Details/Credentials for Registration\n *\n");
+printf("\t\t\t\t\t\t\t\t  * Details/Credentials for Registration *\n");
                 ///Credentials,calculations and medical details///
 
 printf("\n%c Enter your name                                            : ",i);
@@ -30,7 +30,7 @@ printf("\n%c To measure your minimum heart rate/pulse at your wrist, place 2 fin
 printf("\n\n%c NOTE: The average minimum heart rate of a human being is in range of b/w: 60-100 beats per minute.",m);
 printf("\n\n%c Enter your minimum heart rate: ",i);
 scanf("%f",&minimum_heart_rate);
-printf("============================================================================================================================================================");
+printf("============================================================================================================================================================\n");
 
 bmi=((weight)/(height*height));                                              //BMI formula
 
@@ -221,10 +221,11 @@ void vo2max_calculations(char sex, int max_heart_rate, float min_heart_rate, flo
 
 void details(char full_name[50], int person_age, char person_gender, float person_weight, float person_height)
 {
-    int n=175;
+    int n=175,o=16,p=17;
 
-    printf("  \n\n\n============================================================================================================================================================");
-    printf("\n\t\t\t\t\t\t\t\t    * Service Details *");
+    printf("\n\t\t\t\t\t\t                  %c Details saved successfully %c",o,p);
+    printf("  \n\n============================================================================================================================================================");
+    printf("\n\t\t\t\t\t\t\t\t       * Service Details *");
     printf("\n%c Name          : ",n);
     puts(full_name);
     printf("%c Age           : %d years",n,person_age);
@@ -240,3 +241,4 @@ void details(char full_name[50], int person_age, char person_gender, float perso
     printf("\n%c Height        : %.2f m",n,person_height);
 
 }
+
