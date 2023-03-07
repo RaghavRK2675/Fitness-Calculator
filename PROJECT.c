@@ -1,7 +1,7 @@
                                              ///Start of program///
 
 #include<stdio.h>
-void vo2max_calculations(char, int, float, float);
+void vo2max_calculations(char, int, int, float, float);
 void details(char[50], int, char, float, float);
 int main()
 {
@@ -57,28 +57,28 @@ if(bmi<5)
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : Underweight",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 if(bmi>=5 && bmi<=85)
 {
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : Healthy Weight",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 if(bmi>=85 && bmi<=95)
 {
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : At risk of overweight",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 if(bmi>95)
 {
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : Overweight",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 }
 
@@ -97,28 +97,28 @@ if(bmi<18.5)
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : Underweight",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 if(bmi>=18.5 && bmi<=24.9)
 {
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : Healthy weight",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 if(bmi>=25 && bmi<=29.9)
 {
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : Overweight",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 if(bmi>=30)
 {
     details(name, age, gender, weight, height);
     printf("\n%c BMI           : %.2f kg/m%c",n,bmi,o);
     printf("\n%c Weight Status : Obesity",n);
-    vo2max_calculations(gender, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
+    vo2max_calculations(gender, age, maximum_heart_rate, minimum_heart_rate, vo2max);                    //Function call for displaying VO2max related information
 }
 }
 }
@@ -133,14 +133,14 @@ if(bmi>=30)
                 ///Function for calculation of VO2max and displaying VO2max related details///
 
 
-void vo2max_calculations(char sex, int max_heart_rate, float min_heart_rate, float vo2max)
+void vo2max_calculations(char sex,int age, int max_heart_rate, float min_heart_rate, float vo2max)
 {
 
-    //Conditions for different VO2max levels for males//
+    //Conditions for different VO2max levels for females//
 
     int n=175;
 
-    if(sex=='M' || sex=='m')
+    if(sex=='F' || sex=='f')
     {
         if(vo2max<20)
         {
@@ -173,45 +173,497 @@ void vo2max_calculations(char sex, int max_heart_rate, float min_heart_rate, flo
         }
     }
 
-    //<---Conditions for different VO2max levels for males--->//
+    //<---Conditions for different VO2max levels for females--->//
 
 
-    //Conditions for different VO2max levels for females//
+    //Conditions for different VO2max levels for males//
 
-    if(sex=='F' || sex=='f')
+    if(sex=='M' || sex=='m')
     {
-        if(vo2max<35)
+        if(age<18)
         {
-            printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
-            printf("\n%c VO2max status : Bad",n);
-            printf("\n%c Fitness level : Bad\n",n);
-            printf("============================================================================================================================================================");
+            if(vo2max<30)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Very poor",n);
+                printf("\n%c Fitness level : Very poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=30 && vo2max<=36)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>36 && vo2max<37)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=37 && vo2max<=41)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>41 && vo2max<42)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=42 && vo2max<=46)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>46 && vo2max<47)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=47 && vo2max<=51)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>51 && vo2max<52)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=52 && vo2max<=60)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Good",n);
+                printf("\n%c Fitness level : Good\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+
+            if(vo2max>60)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Excellent",n);
+                printf("\n%c Fitness level : Excellent\n",n);
+                printf("============================================================================================================================================================");
+            }
         }
 
-        else if(vo2max>=35 && vo2max<=40)
+
+        if(age>=18 && age<=25)
         {
-            printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
-            printf("\n%c VO2max status : Average",n);
-            printf("\n%c Fitness level : Average\n",n);
-            printf("============================================================================================================================================================");
+           if(vo2max<30)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Very poor",n);
+                printf("\n%c Fitness level : Very poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=30 && vo2max<=36)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>36 && vo2max<37)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=37 && vo2max<=41)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>41 && vo2max<42)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=42 && vo2max<=46)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>46 && vo2max<47)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=47 && vo2max<=51)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>51 && vo2max<52)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=52 && vo2max<=60)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Good",n);
+                printf("\n%c Fitness level : Good\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+
+            if(vo2max>60)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Excellent",n);
+                printf("\n%c Fitness level : Excellent\n",n);
+                printf("============================================================================================================================================================");
+            }
         }
-        else if(vo2max>=38 && vo2max<=42)
+
+        if(age>=26 && age<=35)
         {
-            printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
-            printf("\n%c VO2max status : Good",n);
-            printf("\n%c Fitness level : Good\n",n);
-            printf("============================================================================================================================================================");
+            if(vo2max<30)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Very poor",n);
+                printf("\n%c Fitness level : Very poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=30 && vo2max<=34)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=35 && vo2max<=39)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=40 && vo2max<=42)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=43 && vo2max<=48)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=49 && vo2max<=56)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Good",n);
+                printf("\n%c Fitness level : Good\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>56)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Excellent",n);
+                printf("\n%c Fitness level : Excellent\n",n);
+                printf("============================================================================================================================================================");
+            }
         }
-        else if(vo2max>=50)
+
+        if(age>=36 && age<=45)
         {
-            printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
-            printf("\n%c VO2max status : Excellent",n);
-            printf("\n%c Fitness level : Excellent\n",n);
-            printf("============================================================================================================================================================");
+            if(vo2max<26)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Very poor",n);
+                printf("\n%c Fitness level : Very poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=26 && vo2max<=30)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=31 && vo2max<=34)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=35 && vo2max<=38)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=39 && vo2max<=42)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=43 && vo2max<=51)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Good",n);
+                printf("\n%c Fitness level : Good\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>51)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Excellent",n);
+                printf("\n%c Fitness level : Excellent\n",n);
+                printf("============================================================================================================================================================");
+            }
         }
+
+        if(age>=46 && age<=55)
+        {
+            if(vo2max<25)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Very poor",n);
+                printf("\n%c Fitness level : Very poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=25 && vo2max<=28)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=29 && vo2max<=31)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=32 && vo2max<=35)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=36 && vo2max<=38)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=39 && vo2max<=45)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Good",n);
+                printf("\n%c Fitness level : Good\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>45)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Excellent",n);
+                printf("\n%c Fitness level : Excellent\n",n);
+                printf("============================================================================================================================================================");
+            }
+        }
+
+        if(age>=56 && age<=65)
+        {
+            if(vo2max<22)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Very poor",n);
+                printf("\n%c Fitness level : Very poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=22 && vo2max<=25)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=26 && vo2max<=29)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=30 && vo2max<=31)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=32 && vo2max<=35)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=36 && vo2max<=41)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Good",n);
+                printf("\n%c Fitness level : Good\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>41)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Excellent",n);
+                printf("\n%c Fitness level : Excellent\n",n);
+                printf("============================================================================================================================================================");
+            }
+        }
+
+        if(age>=65)
+        {
+            if(vo2max<20)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Very poor",n);
+                printf("\n%c Fitness level : Very poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=20 && vo2max<=21)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=22 && vo2max<=25)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=26 && vo2max<=28)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=29 && vo2max<=32)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>=33 && vo2max<=37)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Good",n);
+                printf("\n%c Fitness level : Good\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>37)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Excellent",n);
+                printf("\n%c Fitness level : Excellent\n",n);
+                printf("============================================================================================================================================================");
+            }
+        }
+
+
     }
 
-                 //<---Conditions for different VO2max levels for females--->//
+                 //<---Conditions for different VO2max levels for males--->//
 
 }
 
