@@ -383,7 +383,23 @@ void vo2max_calculations(char sex,int age, int max_heart_rate, float min_heart_r
                 printf("============================================================================================================================================================");
             }
 
+            if(vo2max>34 && vo2max<35)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Poor",n);
+                printf("\n%c Fitness level : Poor\n",n);
+                printf("============================================================================================================================================================");
+            }
+
             if(vo2max>=35 && vo2max<=39)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Below average",n);
+                printf("\n%c Fitness level : Below average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>39 && vo2max<40)
             {
                 printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
                 printf("\n%c VO2max status : Below average",n);
@@ -399,7 +415,23 @@ void vo2max_calculations(char sex,int age, int max_heart_rate, float min_heart_r
                 printf("============================================================================================================================================================");
             }
 
+            if(vo2max>42 && vo2max<43)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Average",n);
+                printf("\n%c Fitness level : Average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
             if(vo2max>=43 && vo2max<=48)
+            {
+                printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
+                printf("\n%c VO2max status : Above average",n);
+                printf("\n%c Fitness level : Above average\n",n);
+                printf("============================================================================================================================================================");
+            }
+
+            if(vo2max>48 && vo2max<49)
             {
                 printf("\n%c VO2max        : %.2f ml/kg/min",n,vo2max);
                 printf("\n%c VO2max status : Above average",n);
@@ -414,6 +446,7 @@ void vo2max_calculations(char sex,int age, int max_heart_rate, float min_heart_r
                 printf("\n%c Fitness level : Good\n",n);
                 printf("============================================================================================================================================================");
             }
+            
 
             if(vo2max>56)
             {
